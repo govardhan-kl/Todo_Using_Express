@@ -1,0 +1,191 @@
+@media only screen and (min-width: 500px) {
+    body{
+        margin:2% 20%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    body{
+        margin: 0%;
+    }
+}
+
+
+h1{
+    text-align: center;
+    color:rgb(121, 104, 114);
+    font-family: sans-serif;
+    
+}
+
+header{
+    margin: 0;
+}
+
+#container{
+    display: flex;
+}
+
+#input-data, #cat, #dateInput{
+    display: block;
+    width: 100%;
+    left: 5%;
+    padding: 10px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+#cat{
+    border-right: 2px solid lightgray;
+}
+
+label{
+    font-size: small;
+}
+
+label p{
+    margin: 0;
+}
+
+#title {
+    border: 0;
+    width: 50%;
+    outline: none;
+}
+
+#buttonsDiv{
+    padding: 20px;
+    display: flex;
+    align-items: end;
+    justify-content:space-around;
+    border-bottom: 1px solid lightgray;
+}
+
+button{
+    height: 30px;
+}
+
+#create{
+    background-color: skyblue;
+    border: none;
+}
+
+.delete{
+    background-color: rgb(231, 118, 118);
+    border: none;
+}
+
+#create:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+
+.delete:hover{
+    cursor: pointer;
+    background-color: rgb(248, 6, 6);
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #e5e5e5; */
+  }
+  ul li {
+    padding: 10px;
+    /* padding-left: 0; */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  ul li:hover {
+    background: #f3f3f3;
+  }
+
+  #list input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  #list label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  #list label:before {
+    content:'';
+    /* -webkit-appearance: none; */
+    background-color: transparent;
+    border: 1.5px solid #0079bf;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  #list input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 3px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  #list input:checked + label:before {
+    background: #0079bf;
+  } 
+  #list input:checked + label {
+    text-decoration: line-through;
+  }
+
+  .txt{
+    font-size: medium;
+  }
+
+  label p{
+    padding: 9px 2px 5px 30px; 
+  }
+
+  .type{
+    margin: 0;
+    width: 55px;
+    height: 25px;
+    padding: 3px;
+    text-align: center;
+    position: relative;
+    padding-top: 9px;
+    color: white;
+  }
+
+  .Personal{
+    background-color: green;
+  }
+
+  .Work{
+    background-color: purple;
+  }
+
+  .School{
+    background-color: darkblue;
+  }
+
+  .Cleaning{
+    background-color: darkkhaki;
+  }
+
+  .Other{
+    background-color: darkorange;
+  }

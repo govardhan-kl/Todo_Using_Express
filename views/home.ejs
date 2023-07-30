@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>TODO App</h1>
+        <form id="create-form" action="/create-task" method="post">
+            <div id="input-data">
+                <label for="title"><p>DESCRIPTION</p></label>
+                    <input type="text" name="title"  id="title" placeholder="What do you need to do" required>
+            </div>
+            <div id="container">
+                <div id="cat">
+                    <label for="category"><p>CATEGORY</p></label>
+                    <select name="category" id="category" required >
+                        <option value="" disabled selected hidden>Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div id="dateInput">
+                    <label for="date"><p>DUE DATE</p></label>
+                        <input type="date" id="date" name="dueDate" required>
+                </div>
+            </div>
+        </form>
+        <div id="buttonsDiv">
+            <div>
+                <button form="create-form" id="create" type="submit"><i class="fa-solid fa-plus"></i>&nbsp;Add Task</button>
+            </div>
+            <div>
+                <a href="/">
+                    <button class="delete" onclick="delete_task()">
+                        <i class="fa-solid fa-trash"></i>&nbsp;Delete Task
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <ul id="list">
+                <% for(let i=0; i< todo_data.length; i++) {%>
+                    <li>
+                        <input type="checkbox" id="<%=todo_data[i]._id%>" class="custom-checkbox">
+                        <label for="<%=todo_data[i]._id%>" class="txt"><%= todo_data[i].title %><p><i class="fa-solid fa-calendar-days">&nbsp;</i><%= todo_data[i].date %></p></label>
+                        <p class="<%= todo_data[i].category %> type"><%= todo_data[i].category %></p>
+                    </li>
+                <%}%>
+            </ul>    
+        </div>
+    </main>
+    <script src="/scripts/script.js" type="text/javascript"></script>
+</body>
+</html>
