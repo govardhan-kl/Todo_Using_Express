@@ -31,7 +31,7 @@ router.post('/create-task', function(req, res){
         res.redirect('back')
     })
     .catch(function(err){
-        console.log(`Error is : ${err}`)
+        console.log(`Error while creating is : ${err}`)
     })
 })
 
@@ -46,7 +46,7 @@ router.get('/delete-task/:id', function(req,res){
         res.redirect('/')
     })
     .catch(function(err){
-        console.log(`Error is : ${err}`)
+        console.log(`Error in deleting is : ${err}`)
     })
 })
 
