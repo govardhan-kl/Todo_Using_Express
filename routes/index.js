@@ -6,6 +6,7 @@ const Todo = require('../models/Todo');
 
 //this is for initial display
 router.get('/', function(req, res){
+    console.log('home rendered')
     Todo.find({})
     .then(function(todo){
         return res.render('home',{
@@ -39,7 +40,6 @@ router.post('/create-task', function(req, res){
 //this is to remove or delete the TODO
 router.get('/delete-task/:id', function(req,res){
     let id = req.params.id;
-    res.redirect('/')
     Todo.findByIdAndDelete(id)
     .then(function(del){
         console.log("deleted successfully"+ del)
